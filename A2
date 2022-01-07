@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+grupos = ["1.66", "1.67", "1.68", "1.69", "1.70", "1.71", "1.72", "1.73", "1.74", "1.75"]
+freq1 = [96, 97, 97, 93, 115, 113, 107, 97, 95, 90]
+freq2 = [100.47, 100.16, 98.63, 98.78, 100.12, 102.85, 99.31, 99.55, 101.19, 98.94]
+
+fig = plt.figure(figsize = (15, 7.5))
+ 
+index = np.arange(len(grupos))
+ 
+## Se crean las primeras barras
+plt.bar(index, freq1, label='"altura5.dat" u 1:2', edgecolor = "darkorchid", color = "none", alpha = 0.9, width = 1)
+ 
+## Se crean las segundas barras y se colocan sobre las primeras
+plt.bar(index, freq2, label='"altura5.dat" u 1:3', edgecolor = "green", color = "none", alpha = 0.9, width = 1)
+ 
+plt.xticks(index, grupos)
+plt.ylabel("Frecuencias")
+plt.xlabel("Alturas")
+plt.legend()
+ 
+plt.show()
